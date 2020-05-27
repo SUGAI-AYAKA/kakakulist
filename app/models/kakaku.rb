@@ -1,0 +1,2 @@
+class Kakaku < ApplicationRecord
+end

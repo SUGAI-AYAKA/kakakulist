@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hinnmei: MyString
+  sikirikakaku: MyString
+  teika: MyString
+  bikou: MyString
+
+two:
+  hinnmei: MyString
+  sikirikakaku: MyString
+  teika: MyString
+  bikou: MyString

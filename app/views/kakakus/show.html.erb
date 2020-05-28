@@ -1,9 +1,9 @@
-<h1><%= @kakaku.id %>の価格表詳細ページ</h1>
+<h1><%= @kakaku.hinnmei %>の価格表詳細ページ</h1>
 
 
 <table class="table table-bordered">
   <thead>
-    <th scope="col">品名</th>
+    <th scope="col">品名/サイズ</th>
       <th scope="col">仕切り価格</th>
       <th scope="col">定価</th>
       <th scope="col">備考</th>
@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= @kakaku.id %></td>
+      <td><%= @kakaku.hinnmei %></td>
       <td><%= @kakaku.sikirikakaku %></td>
       <td><%= @kakaku.teika %></td>
       <td><%= @kakaku.bikou %></td>

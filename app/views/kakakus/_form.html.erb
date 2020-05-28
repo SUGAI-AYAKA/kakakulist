@@ -1,6 +1,16 @@
-<h1>価格の新規登録</h1>
+
 
 <%= form_with(model: kakaku, local: true) do |f| %>
+<% if kakaku.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% kakaku.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
   <%= f.label :hinnmei, '品名' %>
   <%= f.text_field :hinnmei %>
   

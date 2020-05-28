@@ -1,0 +1,20 @@
+<h1>価格の新規登録</h1>
+
+<%= form_with(model: kakaku, local: true) do |f| %>
+  <%= f.label :hinnmei, '品名' %>
+  <%= f.text_field :hinnmei %>
+  
+  <%= f.label :sikirikakaku, '仕切価格' %>
+  <%= f.text_field :sikirikakaku  %>
+  
+  <%= f.label :teika, '定価' %>
+  <%= f.text_field :teika %>
+  
+  <%= f.label :bikou, '備考' %>
+  <%= f.text_field :bikou %>
+
+  <%= f.submit '投稿' %>
+<% end %>
+
+
+<%= link_to '一覧に戻る', kakakus_path %>

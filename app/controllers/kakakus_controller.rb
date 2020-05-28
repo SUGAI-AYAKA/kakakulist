@@ -1,10 +1,11 @@
 class KakakusController < ApplicationController
+  before_action :set_kakaku, only: [:show, :edit, :update, :destroy]
   def index
     @kakaku = Kakaku.all
   end
 
   def show
-    @kakaku = Kakaku.find(params[:id])
+    set_kakaku
   end
 
   def new
@@ -24,12 +25,11 @@ class KakakusController < ApplicationController
   end
 
   def edit
-    @kakaku = Kakaku.find(params[:id])
+    set_kakaku
   end
   
   def update
-    @update = Kakaku.find(params[:id])
-    
+    set_kakaku
     if @kakaku.update(kakaku_params)
       flash[:success] = '価格表は正常に更新されました'
       redirect_to @kakaku
@@ -40,14 +40,18 @@ class KakakusController < ApplicationController
   end
   
   def destroy
-    @kakaku = Kakaku.find(params[:id])
+    set_kakaku
     @kakaku.destroy
     
-    flash[:success] = '価格は正常に更新されませんでした'
+    flash[:success] = '価格は正常に削除されました'
     redirect_to kakakus_url
   end
   
   private
+  
+  def set_kakaku
+    @kakaku = Kakaku.find(params[:id])
+  end
   
   #strong parameter
   def kakaku_params

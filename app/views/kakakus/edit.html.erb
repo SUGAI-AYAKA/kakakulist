@@ -1,19 +1,6 @@
-<h1>価格の編集ページ</h1>
+<h1>id: <%= @kakaku.id %> の価格リスト編集ページ</h1>
 
-<%= form_with(model: @kakaku, local: true) do |f| %>
-  <%= f.label :hinnmei, '品名' %>
-  <%= f.text_field :hinnmei %>
-  
-  <%= f.label :sikirikakaku, '仕切り価格' %>
-  <%= f.text_field :sikirikakaku %>
-  
-  <%= f.label :teika, '定価' %>
-  <%= f.text_field :teika %>
-  
-  <%= f.label :bikou, '備考' %>
-  <%= f.text_field :bikou %>
+<%= render 'form', kakaku: @kakaku %>
 
-  <%= f.submit '投稿' %>
-<% end %>
 
 <%= link_to '一覧に戻る', kakakus_path %>

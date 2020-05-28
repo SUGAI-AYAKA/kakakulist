@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_022301) do
+ActiveRecord::Schema.define(version: 2020_05_28_044816) do
 
   create_table "kakakus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "hinnmei"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_022301) do
     t.string "bikou"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "size"
   end
 
 end

@@ -1,11 +1,37 @@
 <h1>価格一覧</h1>
 
- 
+<% if @kakaku.any? %>
+
+
+ <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>品名</th>
+        <th>サイズ</th>
+        <th>仕切り価格</th>
+        <th>定価</th>
+        <th>備考</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @kakaku.each do |kakaku| %>
+        <tr>
+          <td><%= link_to kakaku.id, kakaku %></td>
+          <td><%= kakaku.hinnmei %></td>
+          <td><%= kakaku.size %></td>
+          <td><%= kakaku.sikirikakaku %></td>
+          <td><%= kakaku.teika %></td>
+          <td><%= kakaku.bikou %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @kakaku %>
+  </div>
+<% end %>
   
-<ul>
-  <% @kakaku.each do |kakaku| %>
-    <li><%= link_to kakaku.id, kakaku %> : </li>
-  <% end %>
-</ul>
+
  
- <%= link_to '新規登録', new_kakaku_path, class:'btn bnt-primary' %>
+ <%= link_to '新規価格の投稿', new_kakaku_path, class: "btn btn-primary" %>

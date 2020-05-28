@@ -1,7 +1,7 @@
 class KakakusController < ApplicationController
   before_action :set_kakaku, only: [:show, :edit, :update, :destroy]
   def index
-    @kakaku = Kakaku.all
+    @kakaku = Kakaku.all.page(params[:page])
   end
 
   def show
@@ -55,6 +55,6 @@ class KakakusController < ApplicationController
   
   #strong parameter
   def kakaku_params
-    params.require(:kakaku).permit(:hinnmei,:sikirikakaku,:teika,:bikou)
+    params.require(:kakaku).permit(:hinnmei,:sikirikakaku,:teika,:bikou,:size)
   end
 end

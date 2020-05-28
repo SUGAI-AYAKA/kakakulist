@@ -1,30 +1,39 @@
-
-
-<%= form_with(model: kakaku, local: true) do |f| %>
-<% if kakaku.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% kakaku.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="row">
+  <div class="col-6">
+    <%= form_with(model: kakaku, local: true) do |f| %>
+    <% if kakaku.errors.any? %>
+      <div id="error_explanation" class="alert alert-warning">
+        <ul class="mb-0">
+          <% kakaku.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   
+  
+  <div class="form-group">
   <%= f.label :hinnmei, '品名' %>
-  <%= f.text_field :hinnmei %>
-  
+  <%= f.text_field :hinnmei, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
   <%= f.label :sikirikakaku, '仕切価格' %>
-  <%= f.text_field :sikirikakaku  %>
+  <%= f.text_field :sikirikakaku, class: 'form-control' %>
+  </div>
   
+  <div class="form-group">
   <%= f.label :teika, '定価' %>
-  <%= f.text_field :teika %>
+  <%= f.text_field :teika,class: 'form-control' %>
+  </div>
   
+  <div class="form-group">
   <%= f.label :bikou, '備考' %>
-  <%= f.text_field :bikou %>
+  <%= f.text_field :bikou, class: 'form-control' %>
+  </div>
+ 
 
-  <%= f.submit '投稿' %>
-<% end %>
-
-
-<%= link_to '一覧に戻る', kakakus_path %>
+      <%= f.submit '投稿', class: 'bnt btn-primary' %>
+    <% end %>
+  </div>
+</div>

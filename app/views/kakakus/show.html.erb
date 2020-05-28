@@ -1,11 +1,25 @@
 <h1><%= @kakaku.id %>の価格表詳細ページ</h1>
-<ul>
-  <li><%= @kakaku.hinnmei %></li>
-  <li><%= @kakaku.sikirikakaku %></li>
-  <li><%= @kakaku.teika %></li>
-  <li><%= @kakaku.bikou %></li>
-</ul>
-<%= link_to '一覧に戻る', kakakus_path %>
-<%= link_to 'このメッセージを編集する', edit_kakaku_path(@kakaku) %>
-<%= link_to 'このメッセージを削除する', @kakaku, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
 
+
+<table class="table table-bordered">
+  <thead>
+    <th scope="col">品名</th>
+      <th scope="col">仕切り価格</th>
+      <th scope="col">定価</th>
+      <th scope="col">備考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @kakaku.id %></td>
+      <td><%= @kakaku.sikirikakaku %></td>
+      <td><%= @kakaku.teika %></td>
+      <td><%= @kakaku.bikou %></td>
+    </tr>
+  </tbody>
+</table>
+  
+  
+
+<%= link_to 'この価格リストを編集する', edit_kakaku_path(@kakaku), class: 'btn btn-light' %>
+<%= link_to 'この価格リストを削除する', @kakaku, method: :delete, data: { confirm: '本当に削除してよろしいですか？' }, class: 'btn btn-danger' %>

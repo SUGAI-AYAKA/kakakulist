@@ -1,0 +1,11 @@
+<h1><%= @kakaku.id %>の価格表詳細ページ</h1>
+<ul>
+  <li><%= @kakaku.hinnmei %></li>
+  <li><%= @kakaku.sikirikakaku %></li>
+  <li><%= @kakaku.teika %></li>
+  <li><%= @kakaku.bikou %></li>
+</ul>
+<%= link_to '一覧に戻る', kakakus_path %>
+<%= link_to 'このメッセージを編集する', edit_kakaku_path(@kakaku) %>
+<%= link_to 'このメッセージを削除する', @kakaku, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+

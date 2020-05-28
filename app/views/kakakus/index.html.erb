@@ -1,0 +1,15 @@
+<h1>価格一覧</h1>
+
+ 
+  
+<table>
+  <% @kakaku.each do |kakaku| %>
+    <tr>
+      <td><%= kakaku.hinnmei %></td>
+    <tr><%= kakaku.sikirikakaku %></td>
+    <tr><%= kakaku.teika %></td>
+    <tr><%= kakaku.bikou %></td>
+  <% end %>
+</table>
+ 
+ <%= link_to '新規登録', new_kakaku_path, class:'btn bnt-primary' %>
